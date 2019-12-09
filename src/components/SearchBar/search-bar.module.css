@@ -1,0 +1,31 @@
+.searchBarForm {
+  display: flex;
+  margin-bottom: 20px;
+  padding-left: 40px;
+  justify-content: space-between;
+  width: 340px;
+  height: 26px;
+}
+
+.searchBarInput {
+  border-radius: 3px;
+  border: 1px solid black;
+  width: 240px;
+  height: 26px;
+}
+
+.searchBarButton {
+  border-radius: 3px;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  width: 54px;
+  height: 26px;
+}
+
+.searchBarButton:hover,
+.searchBarButton:focus {
+  border: none;
+  background-color: palevioletred;
+}

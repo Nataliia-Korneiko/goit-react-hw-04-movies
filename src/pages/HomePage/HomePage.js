@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import * as API from '../../services/movies-api';
+import s from './home-page.module.css';
 
 class HomePage extends Component {
   state = {
@@ -22,11 +23,11 @@ class HomePage extends Component {
     const { trending } = this.state;
 
     return (
-      <div>
-        <ul>
-          <p>Trending today</p>
+      <div className={s.trendingContainer}>
+        <ul className={s.trendingList}>
+          <p className={s.trendingTitle}>Trending today</p>
           {trending.map(el => (
-            <li key={el.id}>
+            <li className={s.trendingLink} key={el.id}>
               <Link to={`/movies/${el.id}`}>{el.title || el.name}</Link>
             </li>
           ))}

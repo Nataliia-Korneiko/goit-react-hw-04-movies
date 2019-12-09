@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as API from '../../services/movies-api';
+import s from './reviews.module.css';
 
 class Reviews extends Component {
   static propTypes = {
@@ -36,10 +37,10 @@ class Reviews extends Component {
           <p>We don&#39;t have any reviews for this movie.</p>
         )}
         {reviews.length !== 0 && (
-          <ul>
+          <ul className={s.reviewsList}>
             {reviews.map(el => (
-              <li key={el.id}>
-                <p>Author: {el.author}</p>
+              <li className={s.reviewsItem} key={el.id}>
+                <p className={s.reviewsAuthor}>Author: {el.author}</p>
                 <p>{el.content}</p>
               </li>
             ))}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import s from './movies-page.module.css';
 import * as API from '../../services/movies-api';
 
 class MoviesPage extends Component {
@@ -60,9 +61,9 @@ class MoviesPage extends Component {
     return (
       <div>
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <ul>
+        <ul className={s.moviesPageList}>
           {movies.map(el => (
-            <li key={el.id}>
+            <li className={s.moviesPageLink} key={el.id}>
               <Link to={`/movies/${el.id}`}>{el.title}</Link>
             </li>
           ))}

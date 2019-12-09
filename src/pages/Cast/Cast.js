@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as API from '../../services/movies-api';
+import s from './cast.module.css';
 
 class Cast extends Component {
   static propTypes = {
@@ -31,15 +32,16 @@ class Cast extends Component {
     const { cast } = this.state;
     return (
       <>
-        <ul>
+        <ul className={s.castList}>
           {cast.map(el => (
-            <li key={el.id}>
+            <li className={s.castItem} key={el.id}>
               <img
+                className={s.castImg}
                 alt={el.name}
                 src={`https://image.tmdb.org/t/p/w500${el.profile_path}`}
               />
-              <p>{el.name}</p>
-              <p>Character: {el.character}</p>
+              <p className={s.castName}>Name: {el.name}</p>
+              <p className={s.castCharacter}>Character: {el.character}</p>
             </li>
           ))}
         </ul>

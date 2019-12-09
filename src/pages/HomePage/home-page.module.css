@@ -1,0 +1,20 @@
+.trendingContainer {
+  padding-left: 40px;
+}
+
+.trendingList {
+  margin: 0;
+  padding: 0;
+}
+
+.trendingTitle {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.trendingLink {
+  font-size: 18px;
+}

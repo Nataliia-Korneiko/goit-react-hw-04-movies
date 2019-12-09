@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import s from './search-bar.module.css';
 
 class SearchBar extends Component {
   static propTypes = {
@@ -25,9 +26,16 @@ class SearchBar extends Component {
   render() {
     const { value } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input value={value} onChange={this.handleChange} type="text" />
-        <button type="submit">Search</button>
+      <form className={s.searchBarForm} onSubmit={this.handleSubmit}>
+        <input
+          className={s.searchBarInput}
+          value={value}
+          onChange={this.handleChange}
+          type="text"
+        />
+        <button className={s.searchBarButton} type="submit">
+          Search
+        </button>
       </form>
     );
   }

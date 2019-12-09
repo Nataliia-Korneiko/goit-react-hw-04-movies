@@ -1,0 +1,15 @@
+.reviewsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reviewsItem {
+  padding-bottom: 15px;
+}
+
+.reviewsAuthor {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}

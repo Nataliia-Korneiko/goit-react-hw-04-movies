@@ -1,0 +1,70 @@
+.MovieDetailsPageContainer {
+  padding-left: 40px;
+}
+
+.MovieDetailsPageButton {
+  margin-bottom: 20px;
+  border-radius: 3px;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  width: 300px;
+  height: 26px;
+}
+
+.MovieDetailsPageButton:hover,
+.MovieDetailsPageButton:focus {
+  border: none;
+  background-color: palevioletred;
+}
+
+.MovieDetailsPageAbout {
+  margin-bottom: 30px;
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.MovieDetailsPageImg {
+  width: 300px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.MovieDetailsPageInfo {
+  width: 560px;
+}
+
+.MovieDetailsPageMainTitle,
+.MovieDetailsPageScore,
+.MovieDetailsPageOverviewAbout {
+  margin-bottom: 20px;
+}
+
+.MovieDetailsPageOverview,
+.MovieDetailsPageGenres,
+.MovieDetailsPageTitle {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.MovieDetailsPageList {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  width: 200px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.MovieDetailsPageLink {
+  text-decoration: none;
+  color: black;
+}

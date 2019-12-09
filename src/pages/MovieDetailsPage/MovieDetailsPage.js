@@ -3,8 +3,13 @@ import PropTypes from 'prop-types';
 import { NavLink, Switch, Route } from 'react-router-dom';
 import Cast from '../Cast/Cast';
 import Reviews from '../Reviews/Reviews';
+import s from './MovieDetailsPage.module.css';
 import * as API from '../../services/movies-api';
 import routes from '../../routes';
+
+const ativeLink = {
+  color: 'palevioletred',
+};
 
 class MovieDetailsPage extends Component {
   static propTypes = {
@@ -58,34 +63,59 @@ class MovieDetailsPage extends Component {
     // console.log(genres);
 
     return (
-      <div>
-        <button type="button" onClick={this.handleGoback}>
+      <div className={s.MovieDetailsPageContainer}>
+        <button
+          className={s.MovieDetailsPageButton}
+          type="button"
+          onClick={this.handleGoback}
+        >
           Go back
         </button>
         {movie.original_title && (
-          <div>
+          <div className={s.MovieDetailsPageAbout}>
             <img
+              className={s.MovieDetailsPageImg}
               alt={movie.original_title}
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             />
-            <h2>
-              {movie.original_title} ({movie.release_date.slice(0, 4)})
-            </h2>
-            <p>User Score: {movie.vote_average * 10}%</p>
+            <div className={s.MovieDetailsPageInfo}>
+              <h2 className={s.MovieDetailsPageMainTitle}>
+                {movie.original_title} ({movie.release_date.slice(0, 4)})
+              </h2>
+              <p className={s.MovieDetailsPageScore}>
+                User Score: {movie.vote_average * 10}%
+              </p>
 
-            <p>Overview {movie.overview}</p>
-            <p>Genres {genres}</p>
-            <p>Additional information</p>
-            <ul>
-              <li>
-                <NavLink to={`${match.url}/cast`}>Cast</NavLink>
-              </li>
-              <li>
-                <NavLink to={`${match.url}/reviews`}>Reviews</NavLink>
-              </li>
-            </ul>
+              <p className={s.MovieDetailsPageOverview}>Overview:</p>
+              <p className={s.MovieDetailsPageOverviewAbout}>
+                {movie.overview}
+              </p>
+              <p className={s.MovieDetailsPageGenres}>Genres:</p>
+              <p>{genres}</p>
+            </div>
           </div>
         )}
+        <p className={s.MovieDetailsPageTitle}>Additional information:</p>
+        <ul className={s.MovieDetailsPageList}>
+          <li>
+            <NavLink
+              to={`${match.url}/cast`}
+              activeStyle={ativeLink}
+              className={s.MovieDetailsPageLink}
+            >
+              Cast
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={`${match.url}/reviews`}
+              activeStyle={ativeLink}
+              className={s.MovieDetailsPageLink}
+            >
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
         <Switch>
           <Route path={routes.CAST} component={Cast} />
           <Route path={routes.REVIEWS} component={Reviews} />

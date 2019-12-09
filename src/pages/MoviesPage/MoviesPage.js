@@ -19,7 +19,6 @@ class MoviesPage extends Component {
   componentDidMount() {
     const { location } = this.props;
     const currentSearch = new URLSearchParams(location.search).get('query');
-    // if(location)
 
     if (!currentSearch) {
       return;

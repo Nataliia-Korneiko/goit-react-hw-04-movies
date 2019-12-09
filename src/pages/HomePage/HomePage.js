@@ -14,7 +14,6 @@ class HomePage extends Component {
 
   getTrending = () => {
     API.getTrending().then(res => {
-      // console.log('res', res);
       this.setState({ trending: res.data.results });
     });
   };

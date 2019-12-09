@@ -35,32 +35,19 @@ class MovieDetailsPage extends Component {
     const { movieId } = match.params;
 
     API.getMovieDetails(movieId).then(res => {
-      // console.log('res', res);
       this.setState({ movie: res.data });
     });
   };
 
   handleGoback = () => {
     const { history } = this.props;
-
-    // if (location.state) {
-    //   return history.push(history => ({
-    //     ...history,
-    //     pathname: location.state.from,
-    //   }));
-    // }
-
-    // history.push('/'); // проверить!!!
     history.goBack();
-    // history.push(location.state.from); // проверить!!!
   };
 
   render() {
     const { movie } = this.state;
     const { match } = this.props;
     const genres = movie.genres.reduce((acc, el) => `${acc} ${el.name}`, '');
-
-    // console.log(genres);
 
     return (
       <div className={s.MovieDetailsPageContainer}>

@@ -23,7 +23,6 @@ class Reviews extends Component {
     const { movieId } = match.params;
 
     API.getMovieReviews(movieId).then(res => {
-      // console.log('res', res);
       this.setState({ reviews: res.data.results });
     });
   };

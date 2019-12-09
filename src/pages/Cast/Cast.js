@@ -23,7 +23,6 @@ class Cast extends Component {
     const { movieId } = match.params;
 
     API.getMovieCredits(movieId).then(res => {
-      // console.log('res', res);
       this.setState({ cast: res.data.cast });
     });
   };
